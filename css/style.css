@@ -118,17 +118,19 @@ nav a:hover {
   justify-content: space-around;
   align-items: center;
   background: #ffffff;
-  padding: 20px 10px;
-  border-radius: 30px;
-  margin: -40px auto 40px;
+  padding: 18px 12px;
+  border-radius: 25px;
+  margin: 30px auto;
   max-width: 1100px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 10;
 }
 
 .custom-item {
   text-align: center;
   font-weight: 600;
-  color: #000;
+  color: #111;
   font-size: 14px;
 }
 
@@ -137,4 +139,5 @@ nav a:hover {
   display: block;
   margin-bottom: 6px;
 }
+
 
