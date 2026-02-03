@@ -317,4 +317,18 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+.section{padding:70px 20px;text-align:center}
+.gray{background:#f5f5f5}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:1100px;margin:auto}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:auto}
+.card{background:#fff;padding:20px;border-radius:6px}
+.card img{width:100%}
+.card button{background:#c00000;color:#fff;border:none;padding:10px 20px;margin-top:10px}
+.text div{font-size:16px}
+footer{background:#111;color:#fff;padding:30px;text-align:center}
+
+@media(max-width:900px){
+.grid-3,.grid-4{grid-template-columns:1fr}
+}
+
 
