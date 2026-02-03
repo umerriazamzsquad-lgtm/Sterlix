@@ -58,14 +58,23 @@ nav a:hover {
   position: relative;
 }
 
+/* Neutral premium overlay for categories */
+.category::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
 .overlay {
   position: absolute;
   bottom: 30px;
   left: 30px;
+  z-index: 2;
 }
 
 .overlay h2 {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.65);
   color: #fff;
   padding: 12px 18px;
   font-size: 24px;
@@ -97,21 +106,6 @@ nav a:hover {
   color: #555;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .categories {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
-
-  .category {
-    height: 280px;
-  }
-
-  nav {
-    display: none;
-  }
-}
 /* Customization Bar */
 .custom-bar {
   display: flex;
@@ -139,6 +133,7 @@ nav a:hover {
   display: block;
   margin-bottom: 6px;
 }
+
 /* Sports Uniforms Section */
 .sports-section {
   text-align: center;
@@ -172,6 +167,7 @@ nav a:hover {
   text-decoration: none;
 }
 
+/* SPORT CARD */
 .sport-card {
   height: 300px;
   background-size: cover;
@@ -181,18 +177,20 @@ nav a:hover {
   border-radius: 8px;
 }
 
+/* 🔥 FIXED OVERLAY (NO RED CAST) */
 .sport-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(200, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.35); /* PREMIUM */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.3s ease;
 }
 
+/* Hover – slightly darker, still neutral */
 .sport-card:hover .sport-overlay {
-  background: rgba(160, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .sport-overlay h3 {
@@ -203,12 +201,13 @@ nav a:hover {
   text-align: center;
 }
 
+/* VIEW ALL BUTTON */
 .view-all {
   margin-top: 50px;
 }
 
 .view-all a {
-  background: #c00000;
+  background: #111;
   color: #fff;
   padding: 14px 32px;
   text-decoration: none;
@@ -217,8 +216,21 @@ nav a:hover {
   display: inline-block;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 900px) {
+  .categories {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .category {
+    height: 280px;
+  }
+
+  nav {
+    display: none;
+  }
+
   .sports-grid {
     grid-template-columns: 1fr;
   }
@@ -227,7 +239,3 @@ nav a:hover {
     height: 240px;
   }
 }
-
-
-
-
