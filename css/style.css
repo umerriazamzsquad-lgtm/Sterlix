@@ -45,200 +45,6 @@ nav a:hover {
   color: #c62828;
 }
 
-/* CATEGORIES */
-.categories {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 420px;
-}
-
-.category {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-/* Neutral premium overlay for categories */
-.category::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-}
-
-.overlay {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  z-index: 2;
-}
-
-.overlay h2 {
-  background: rgba(0,0,0,0.65);
-  color: #fff;
-  padding: 12px 18px;
-  font-size: 24px;
-  border-radius: 4px;
-}
-
-/* INTRO */
-.intro {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.intro h3 {
-  font-size: 18px;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.intro h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.intro p {
-  max-width: 800px;
-  margin: auto;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #555;
-}
-
-/* Customization Bar */
-.custom-bar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #ffffff;
-  padding: 18px 12px;
-  border-radius: 25px;
-  margin: 30px auto;
-  max-width: 1100px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  position: relative;
-  z-index: 10;
-}
-
-.custom-item {
-  text-align: center;
-  font-weight: 600;
-  color: #111;
-  font-size: 14px;
-}
-
-.custom-item span {
-  font-size: 26px;
-  display: block;
-  margin-bottom: 6px;
-}
-
-/* Sports Uniforms Section */
-.sports-section {
-  text-align: center;
-  padding: 80px 20px;
-  background: #fff;
-}
-
-.sports-section h2 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.sports-desc {
-  max-width: 900px;
-  margin: 0 auto 50px;
-  font-size: 16px;
-  color: #555;
-  line-height: 1.7;
-}
-
-.sports-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.sport-link {
-  text-decoration: none;
-}
-
-/* SPORT CARD */
-.sport-card {
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-/* 🔥 FIXED OVERLAY (NO RED CAST) */
-.sport-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* PREMIUM */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-}
-
-/* Hover – slightly darker, still neutral */
-.sport-card:hover .sport-overlay {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.sport-overlay h3 {
-  color: #fff;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.25;
-  text-align: center;
-}
-
-/* VIEW ALL BUTTON */
-.view-all {
-  margin-top: 50px;
-}
-
-.view-all a {
-  background: #111;
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 4px;
-  display: inline-block;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .categories {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
-
-  .category {
-    height: 280px;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .sports-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sport-card {
-    height: 240px;
-  }
-}
 /* CATEGORY HERO */
 .category-hero {
   height: 380px;
@@ -270,83 +76,119 @@ nav a:hover {
   max-width: 800px;
 }
 
-/* PRODUCTS */
-.category-products {
-  padding: 80px 20px;
+/* SECTIONS */
+.section {
+  padding: 70px 20px;
   text-align: center;
 }
 
-.category-products h2 {
-  font-size: 34px;
-  margin-bottom: 40px;
+.gray {
+  background: #f5f5f5;
 }
 
-.product-grid {
+/* GRID SYSTEMS */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 25px;
   max-width: 1200px;
   margin: auto;
 }
 
-.product-card {
-  background: #f7f7f7;
+/* CARD (Top categories) */
+.card {
+  background: #fff;
   padding: 20px;
+  border-radius: 8px;
+}
+
+.card img {
+  width: 100%;
   border-radius: 6px;
 }
 
-.product-card img {
-  width: 100%;
-  border-radius: 4px;
+/* PRODUCT GRID (IMPORTANT FIX) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.product-card h3 {
-  margin-top: 15px;
+/* 3 column product grid */
+.product-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* PRODUCT CARD – FIXED HEIGHT */
+.product-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 15px;
+  height: 320px;                /* 🔥 FIX */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee;
+}
+
+/* PRODUCT IMAGE – NO OVERFLOW */
+.product-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;          /* 🔥 shows full uniform */
+  display: block;
+}
+
+/* TEXT GRID */
+.text div {
   font-size: 16px;
 }
 
-/* Responsive */
+/* FOOTER */
+footer {
+  background: #111;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .product-grid {
-    grid-template-columns: 1fr 1fr;
+  nav {
+    display: none;
+  }
+
+  .grid-3,
+  .grid-4,
+  .product-grid,
+  .product-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card {
+    height: 300px;
   }
 }
 
 @media (max-width: 500px) {
-  .product-grid {
+  .grid-3,
+  .grid-4,
+  .product-grid,
+  .product-grid-3 {
     grid-template-columns: 1fr;
   }
+
+  .product-card {
+    height: 260px;
+  }
 }
-.section{padding:70px 20px;text-align:center}
-.gray{background:#f5f5f5}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:1100px;margin:auto}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:auto}
-.card{background:#fff;padding:20px;border-radius:6px}
-.card img{width:100%}
-.card button{background:#c00000;color:#fff;border:none;padding:10px 20px;margin-top:10px}
-.text div{font-size:16px}
-footer{background:#111;color:#fff;padding:30px;text-align:center}
-
-@media(max-width:900px){
-.grid-3,.grid-4{grid-template-columns:1fr}
-}
-/* 4 Image Grid */
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Image sizing fix */
-.grid-4 img {
-  width: 100%;
-  height: 260px;        /* 👈 controls image height */
-  object-fit: cover;   /* keeps image proportion */
-  border-radius: 10px; /* optional – premium look */
-  display: block;
-}
-
-
-
