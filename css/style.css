@@ -330,5 +330,23 @@ footer{background:#111;color:#fff;padding:30px;text-align:center}
 @media(max-width:900px){
 .grid-3,.grid-4{grid-template-columns:1fr}
 }
+/* 4 Image Grid */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Image sizing fix */
+.grid-4 img {
+  width: 100%;
+  height: 260px;        /* 👈 controls image height */
+  object-fit: cover;   /* keeps image proportion */
+  border-radius: 10px; /* optional – premium look */
+  display: block;
+}
+
 
 
