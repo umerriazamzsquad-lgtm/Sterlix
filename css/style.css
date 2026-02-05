@@ -14,6 +14,11 @@ body {
   line-height: 1.6;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 /* =========================
    TOP BAR
 ========================= */
@@ -43,7 +48,7 @@ body {
 
 .logo img {
   height: 60px;
-  display: block;
+  width: auto;
 }
 
 nav a {
@@ -51,20 +56,19 @@ nav a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  font-size: 15px;
 }
 
 nav a:hover {
-  color: #b00000;
+  color: #c62828;
 }
 
 /* =========================
-   HOME HERO CATEGORIES (3 boxes)
+   HOME HERO CATEGORIES
 ========================= */
 .categories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 380px;
+  height: 320px;
 }
 
 .category {
@@ -78,71 +82,149 @@ nav a:hover {
   inset: 0;
   background: rgba(0,0,0,0.45);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding: 25px;
+  text-align: center;
 }
 
 .category .overlay h2 {
   color: #fff;
-  font-size: 28px;
-  font-weight: 800;
-  text-shadow: 0 3px 12px rgba(0,0,0,0.5);
+  font-size: 26px;
+  font-weight: 700;
 }
 
 /* =========================
-   CUSTOMIZATION BAR
+   CUSTOM BAR
 ========================= */
 .custom-bar {
-  background: #f6f6f6;
   display: flex;
-  justify-content: center;
-  gap: 55px;
-  padding: 18px 20px;
-  border-bottom: 1px solid #e6e6e6;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 15px;
+  background: #f5f5f5;
   flex-wrap: wrap;
+  gap: 15px;
 }
 
 .custom-item {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 15px;
   font-weight: 600;
-  color: #111;
-  font-size: 14px;
 }
 
 .custom-item span {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* =========================
-   SECTIONS
+   SPORTS SECTION (HOME)
 ========================= */
-.section {
+.sports-section {
   padding: 70px 20px;
   text-align: center;
 }
 
-.section h2 {
-  font-size: 38px;
-  font-weight: 900;
+.sports-section h2 {
+  font-size: 34px;
   margin-bottom: 10px;
 }
 
-.section-desc {
+.sports-desc {
   max-width: 900px;
-  margin: 0 auto 35px;
-  font-size: 15px;
+  margin: 0 auto 40px auto;
+  font-size: 16px;
   color: #444;
 }
 
-.gray {
-  background: #f7f7f7;
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.sport-link {
+  text-decoration: none;
+}
+
+.sport-card {
+  height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.sport-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sport-overlay h3 {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* VIEW ALL BUTTON */
+.view-all {
+  margin-top: 35px;
+}
+
+.view-all a {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.view-all a:hover {
+  background: #c62828;
 }
 
 /* =========================
-   CATEGORY PAGE HERO
+   INTRO SECTION
+========================= */
+.intro {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.intro h3 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.intro h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.intro p {
+  max-width: 900px;
+  margin: auto;
+  color: #444;
+  font-size: 16px;
+}
+
+/* =========================
+   CATEGORY HERO (BASKETBALL PAGE)
 ========================= */
 .category-hero {
   height: 380px;
@@ -154,7 +236,7 @@ nav a:hover {
 .category-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.65);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,23 +247,47 @@ nav a:hover {
 }
 
 .category-overlay h1 {
-  font-size: 48px;
-  font-weight: 900;
+  font-size: 44px;
   margin-bottom: 10px;
 }
 
 .category-overlay p {
-  font-size: 16px;
-  max-width: 900px;
+  font-size: 18px;
+  max-width: 850px;
 }
 
 /* =========================
-   GRID SYSTEMS
+   SECTIONS
+========================= */
+.section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.section-desc {
+  max-width: 850px;
+  margin: 0 auto 40px auto;
+  font-size: 15px;
+  color: #444;
+}
+
+.gray {
+  background: #f5f5f5;
+}
+
+/* =========================
+   GRIDS
 ========================= */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 25px;
   max-width: 1200px;
   margin: auto;
 }
@@ -195,184 +301,111 @@ nav a:hover {
 }
 
 /* =========================
-   CATEGORY CARD (Used everywhere)
+   CATEGORY CARDS (Top 3 Cards)
 ========================= */
 .category-card {
   background: #fff;
   border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-  text-align: center;
-  padding-bottom: 25px;
   border: 1px solid #eee;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  padding-bottom: 25px;
 }
 
 .category-card img {
   width: 100%;
-  height: 260px;
+  height: 220px;
   object-fit: contain;
   background: #f7f7f7;
-  display: block;
-  padding: 20px;
 }
 
 .category-card h3 {
+  margin-top: 18px;
   font-size: 22px;
-  margin: 20px 15px 10px;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .category-card p {
+  padding: 10px 18px;
   font-size: 14px;
   color: #444;
-  margin: 0 20px 18px;
-  line-height: 1.6;
+  min-height: 60px;
 }
 
 .category-card a {
   display: inline-block;
   background: #b00000;
   color: #fff;
-  padding: 12px 30px;
+  padding: 12px 26px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 800;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .category-card a:hover {
-  background: #8f0000;
+  background: #111;
 }
 
 /* =========================
-   SPORTS GRID (Home page 6 categories)
+   PRODUCT GRID (MEN + WOMEN)
 ========================= */
-.sports-section {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-.sports-section h2 {
-  font-size: 44px;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.sports-desc {
-  max-width: 1000px;
-  margin: 0 auto 40px;
-  font-size: 15px;
-  color: #444;
-}
-
-.sports-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.sport-link {
-  text-decoration: none;
-}
-
-.sport-card {
-  height: 260px;
-  border-radius: 18px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.10);
-}
-
-.sport-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(150, 0, 0, 0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.sport-overlay h3 {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 900;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.35);
-}
-
-.view-all {
-  margin-top: 35px;
-}
-
-.view-all a {
-  background: #b00000;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 900;
-  display: inline-block;
-}
-
-.view-all a:hover {
-  background: #8f0000;
-}
-
-/* =========================
-   INTRO SECTION (Home)
-========================= */
-.intro {
-  padding: 80px 20px;
-  text-align: center;
-  max-width: 1050px;
-  margin: auto;
-}
-
-.intro h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #444;
-  margin-bottom: 10px;
-}
-
-.intro h1 {
-  font-size: 50px;
-  font-weight: 900;
-  margin-bottom: 12px;
-}
-
-.intro p {
-  font-size: 16px;
-  color: #444;
-}
-
-/* =========================
-   INCLUDED GRID
-========================= */
-.included-grid {
+.product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
   max-width: 1200px;
   margin: auto;
-  text-align: left;
+}
+
+.product-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* FIXED CARD SIZE (IMPORTANT) */
+.product-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  padding: 18px;
+
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden; /* CRITICAL */
+}
+
+/* IMAGE MUST NEVER BREAK LAYOUT */
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* CRITICAL */
+  display: block;
+}
+
+/* =========================
+   INCLUDED SECTION
+========================= */
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .included-item {
   background: #fff;
-  padding: 25px;
   border-radius: 16px;
   border: 1px solid #eee;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  padding: 25px 15px;
 }
 
 .included-item h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 900;
   color: #b00000;
   margin-bottom: 10px;
@@ -384,7 +417,7 @@ nav a:hover {
 }
 
 /* =========================
-   ORDER PROCESS GRID
+   ORDER PROCESS
 ========================= */
 .order-grid {
   display: grid;
@@ -392,34 +425,33 @@ nav a:hover {
   gap: 25px;
   max-width: 1200px;
   margin: auto;
-  text-align: left;
 }
 
 .order-step {
   background: #fff;
-  border-radius: 16px;
-  padding: 18px;
+  border-radius: 18px;
   border: 1px solid #eee;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  padding-bottom: 18px;
 }
 
 .order-step img {
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
 }
 
 .order-step h4 {
-  font-size: 18px;
-  font-weight: 900;
-  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: 14px;
 }
 
 .order-step p {
-  font-size: 14px;
+  font-size: 13px;
   color: #444;
+  padding: 10px 14px;
 }
 
 /* =========================
@@ -428,14 +460,14 @@ nav a:hover {
 .production-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: 20px;
   max-width: 1200px;
   margin: auto;
 }
 
 .production-grid img {
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid #eee;
@@ -449,21 +481,17 @@ footer {
   color: #fff;
   padding: 35px 20px;
   text-align: center;
-  font-size: 14px;
 }
 
 footer p {
   margin: 6px 0;
+  font-size: 14px;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 1000px) {
-  nav {
-    display: none;
-  }
-
+@media (max-width: 1100px) {
   .categories {
     grid-template-columns: 1fr;
     height: auto;
@@ -481,105 +509,56 @@ footer p {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .included-grid,
-  .order-grid,
-  .production-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 520px) {
-  .sports-grid,
-  .grid-3,
-  .grid-4,
-  .included-grid,
-  .order-grid,
-  .production-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .intro h1 {
-    font-size: 36px;
-  }
-
-  .category-overlay h1 {
-    font-size: 34px;
-  }
-}
-/* =========================
-   FIX: STOP BIG IMAGES BREAKING PAGE
-========================= */
-
-/* Any image inside grids must stay inside the card */
-.product-card img,
-.production-grid img,
-.order-step img,
-.grid-4 img,
-.grid-3 img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* Product card must have fixed height */
-.product-card {
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid #eee;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-  padding: 15px;
-
-  height: 320px;              /* FIX */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;           /* FIX */
-}
-
-/* Make sure product grid works properly */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.product-grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* Production images should NOT stretch huge */
-.production-grid img {
-  height: 180px;
-  object-fit: cover;
-}
-
-/* Order step images should NOT stretch huge */
-.order-step img {
-  height: 180px;
-  object-fit: cover;
-}
-
-/* Responsive */
-@media (max-width: 1000px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .product-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .included-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .order-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .production-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 700px) {
+  .main-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .sports-grid,
+  .grid-3,
   .product-grid,
-  .product-grid-3 {
+  .product-grid-3,
+  .included-grid,
+  .order-grid,
+  .production-grid {
     grid-template-columns: 1fr;
   }
-}
 
+  .product-card {
+    height: 280px;
+  }
+
+  .category-overlay h1 {
+    font-size: 32px;
+  }
+
+  .section h2 {
+    font-size: 28px;
+  }
+}
