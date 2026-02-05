@@ -510,3 +510,76 @@ footer p {
     font-size: 34px;
   }
 }
+/* =========================
+   FIX: STOP BIG IMAGES BREAKING PAGE
+========================= */
+
+/* Any image inside grids must stay inside the card */
+.product-card img,
+.production-grid img,
+.order-step img,
+.grid-4 img,
+.grid-3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Product card must have fixed height */
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  padding: 15px;
+
+  height: 320px;              /* FIX */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;           /* FIX */
+}
+
+/* Make sure product grid works properly */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.product-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Production images should NOT stretch huge */
+.production-grid img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Order step images should NOT stretch huge */
+.order-step img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .product-grid,
+  .product-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
