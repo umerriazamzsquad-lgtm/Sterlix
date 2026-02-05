@@ -1,1 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Quote | Sterlix International</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Quote page extra styling */
+    .quote-wrap {
+      max-width: 1000px;
+      margin: auto;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .quote-wrap h1 {
+      font-size: 44px;
+      margin-bottom: 10px;
+    }
+
+    .quote-wrap p {
+      max-width: 750px;
+      margin: 0 auto 35px;
+      color: #444;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .quote-box {
+      background: #ffffff;
+      border: 1px solid #eee;
+      border-radius: 18px;
+      padding: 35px 25px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .quote-actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .quote-btn {
+      display: inline-block;
+      padding: 16px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+    }
+    .btn-whatsapp:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .btn-email {
+      background: #0b57d0;
+      color: #fff;
+    }
+    .btn-email:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .btn-call {
+      background: #111;
+      color: #fff;
+    }
+    .btn-call:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .quote-details {
+      margin-top: 28px;
+      text-align: left;
+      background: #f7f7f7;
+      padding: 18px;
+      border-radius: 12px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .quote-details b {
+      color: #111;
+    }
+
+    .quote-back {
+      margin-top: 30px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+      color: #c62828;
+    }
+
+    .quote-back:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 850px) {
+      .quote-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-wrap h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span>Manufacturer & Supplier of Custom Team Uniforms & Apparel</span>
+    <span>📧 info@sterlixinternational.com | 📞 +92 332 8609401</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="logo">
+      <img src="images/logo.png" alt="Sterlix International Logo">
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Categories</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <section class="quote-wrap">
+
+    <h1>Get a Quick Quote</h1>
+    <p>
+      Contact Sterlix International directly for pricing, MOQ, samples, delivery time,
+      and customization options. Our team replies fast on WhatsApp.
+    </p>
+
+    <div class="quote-box">
+
+      <h2 style="margin-bottom: 10px;">Choose Your Contact Method</h2>
+      <p style="margin-bottom: 0;">
+        WhatsApp is the fastest option for international buyers.
+      </p>
+
+      <div class="quote-actions">
+
+        <!-- WhatsApp -->
+        <a class="quote-btn btn-whatsapp"
+           href="https://wa.me/923328609401?text=Hello%20Sterlix%20International!%20I%20want%20a%20quote%20for%20custom%20uniforms."
+           target="_blank">
+          💬 WhatsApp
+        </a>
+
+        <!-- Email -->
+        <a class="quote-btn btn-email"
+           href="mailto:info@sterlixinternational.com?subject=Quote%20Request%20-%20Sterlix%20International">
+          ✉️ Email
+        </a>
+
+        <!-- Call -->
+        <a class="quote-btn btn-call"
+           href="tel:+923328609401">
+          📞 Call
+        </a>
+
+      </div>
+
+      <div class="quote-details">
+        <b>To get a faster quote, send:</b><br>
+        ✅ Product Category (Basketball / Soccer / Football etc.)<br>
+        ✅ Quantity (MOQ / Bulk)<br>
+        ✅ Size Range (S–XXL)<br>
+        ✅ Your Logo (PNG/PDF/AI)<br>
+        ✅ Shipping Country + City<br>
+      </div>
+
+    </div>
+
+    <a class="quote-back" href="index.html">← Back to Home</a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Sterlix International</strong> — Sialkot, Pakistan</p>
+    <p>Email: info@sterlixinternational.com | WhatsApp: +92 332 8609401</p>
+    <p>© <span id="year"></span> Sterlix International. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
 
