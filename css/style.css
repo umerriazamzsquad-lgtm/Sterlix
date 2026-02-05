@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -8,19 +11,27 @@
 body {
   background: #ffffff;
   color: #111;
+  line-height: 1.6;
 }
 
-/* TOP BAR */
+/* =========================
+   TOP BAR
+========================= */
 .top-bar {
   background: #111;
   color: #fff;
   padding: 8px 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 13px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .main-header {
   display: flex;
   align-items: center;
@@ -32,6 +43,7 @@ body {
 
 .logo img {
   height: 60px;
+  display: block;
 }
 
 nav a {
@@ -45,116 +57,117 @@ nav a:hover {
   color: #c62828;
 }
 
-/* ==========================
-   HOME PAGE HERO CATEGORIES
-========================== */
+/* =========================
+   HERO CATEGORIES (3 BOXES)
+========================= */
 .categories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 420px;
+  height: 380px;
 }
 
 .category {
-  position: relative;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 .category .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: flex-end;
-  justify-content: center;
   padding: 25px;
 }
 
 .category .overlay h2 {
   color: #fff;
-  font-size: 34px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0px 4px 10px rgba(0,0,0,0.6);
+  font-size: 30px;
+  font-weight: 700;
 }
 
-/* CUSTOMIZATION BAR */
+/* =========================
+   CUSTOMIZATION BAR
+========================= */
 .custom-bar {
+  background: #f7f7f7;
   display: flex;
   justify-content: center;
   gap: 50px;
   padding: 18px 20px;
-  background: #f7f7f7;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
 }
 
 .custom-item {
-  text-align: center;
-  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
   color: #222;
 }
 
 .custom-item span {
   font-size: 22px;
-  display: block;
-  margin-bottom: 6px;
 }
 
-/* ==========================
-   HOME SPORTS SECTION
-========================== */
+/* =========================
+   SPORTS UNIFORMS SECTION
+========================= */
 .sports-section {
-  padding: 80px 20px;
+  padding: 70px 20px;
   text-align: center;
 }
 
 .sports-section h2 {
-  font-size: 44px;
-  font-weight: 900;
-  margin-bottom: 10px;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 15px;
 }
 
 .sports-desc {
-  max-width: 950px;
-  margin: 0 auto 50px;
+  max-width: 900px;
+  margin: 0 auto 45px auto;
   font-size: 16px;
-  line-height: 1.7;
-  color: #333;
+  color: #444;
 }
 
+/* SPORTS GRID */
 .sports-grid {
-  max-width: 1200px;
-  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* Each clickable card */
 .sport-link {
   text-decoration: none;
+  color: inherit;
 }
 
 .sport-card {
   height: 260px;
-  border-radius: 18px;
+  border-radius: 16px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   position: relative;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: 0.25s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease;
 }
 
 .sport-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .sport-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(200, 0, 0, 0.35);
+  background: rgba(0,0,0,0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,63 +176,63 @@ nav a:hover {
 
 .sport-overlay h3 {
   color: #fff;
-  font-size: 34px;
-  font-weight: 900;
-  line-height: 1.1;
-  text-shadow: 0px 4px 12px rgba(0,0,0,0.7);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
+/* View all button */
 .view-all {
-  margin-top: 45px;
+  margin-top: 40px;
 }
 
 .view-all a {
   background: #b30000;
   color: #fff;
-  padding: 15px 30px;
-  font-weight: 800;
-  text-decoration: none;
+  padding: 14px 30px;
   border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
   display: inline-block;
 }
 
 .view-all a:hover {
-  background: #8f0000;
+  background: #8a0000;
 }
 
-/* INTRO SECTION */
+/* =========================
+   INTRO SECTION
+========================= */
 .intro {
-  padding: 80px 20px;
+  padding: 70px 20px;
   text-align: center;
-  background: #fff;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .intro h3 {
   font-size: 18px;
   letter-spacing: 1px;
-  margin-bottom: 10px;
-  color: #444;
+  color: #666;
+  margin-bottom: 5px;
 }
 
 .intro h1 {
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 900;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 }
 
 .intro p {
-  max-width: 900px;
-  margin: auto;
   font-size: 16px;
-  line-height: 1.7;
-  color: #333;
+  color: #444;
 }
 
-/* ==========================
-   CATEGORY HERO
-========================== */
+/* =========================
+   CATEGORY HERO (Landing Pages)
+========================= */
 .category-hero {
-  height: 360px;
+  height: 380px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -228,58 +241,53 @@ nav a:hover {
 .category-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 20px;
   color: #fff;
+  padding: 20px;
 }
 
 .category-overlay h1 {
-  font-size: 46px;
+  font-size: 44px;
+  margin-bottom: 10px;
   font-weight: 900;
-  margin-bottom: 12px;
 }
 
 .category-overlay p {
-  max-width: 900px;
   font-size: 18px;
-  line-height: 1.6;
+  max-width: 850px;
 }
 
-/* SECTIONS */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 .section {
   padding: 70px 20px;
   text-align: center;
 }
 
-.section.gray {
+.section h2 {
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+
+.gray {
   background: #f5f5f5;
 }
 
-.section h2 {
-  font-size: 36px;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.section-desc {
-  max-width: 950px;
-  margin: 0 auto 40px;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #333;
-}
-
-/* GRID */
+/* =========================
+   GRIDS
+========================= */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -291,51 +299,46 @@ nav a:hover {
   margin: auto;
 }
 
-/* CATEGORY CARD */
-.category-card {
+/* =========================
+   CATEGORY CARDS (Basketball page top 3)
+========================= */
+.card {
   background: #fff;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid #eee;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+  text-align: center;
 }
 
-.category-card img {
+.card img {
   width: 100%;
   height: 240px;
-  object-fit: cover;
+
+  /* ✅ FIX: SHOW FULL IMAGE (NO CROPPING) */
+  object-fit: contain;
+
+  background: #fff;
+  padding: 10px;
+
+  border-radius: 14px;
   display: block;
 }
 
-.category-card h3 {
-  font-size: 18px;
+.card h3 {
+  margin-top: 15px;
+  font-size: 20px;
   font-weight: 800;
-  margin: 15px 10px 6px;
 }
 
-.category-card p {
+.card p {
+  margin-top: 10px;
   font-size: 14px;
   color: #444;
-  margin: 0 15px 15px;
-  line-height: 1.6;
 }
 
-.category-card a {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 12px 18px;
-  background: #b30000;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 800;
-  border-radius: 6px;
-}
-
-.category-card a:hover {
-  background: #8f0000;
-}
-
-/* PRODUCT GRID */
+/* =========================
+   PRODUCT GRID (Men / Women Uniforms)
+========================= */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -348,15 +351,17 @@ nav a:hover {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* PRODUCT CARD */
 .product-card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 14px;
-  border: 1px solid #eee;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 15px;
   height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #eee;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.05);
 }
 
 .product-card img {
@@ -366,95 +371,48 @@ nav a:hover {
   display: block;
 }
 
-/* INCLUDED */
-.included-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  max-width: 1100px;
-  margin: auto;
-  text-align: left;
-}
-
-.included-item h3 {
-  font-size: 18px;
-  font-weight: 900;
-  color: #b30000;
-  margin-bottom: 8px;
-}
-
-.included-item p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* ORDER PROCESS */
-.order-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  max-width: 1200px;
-  margin: auto;
-  text-align: left;
-}
-
-.order-step {
-  background: #fff;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid #eee;
-}
-
-.order-step img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  display: block;
-}
-
-.order-step h4 {
+/* =========================
+   TEXT GRID (Included section)
+========================= */
+.text div {
   font-size: 16px;
-  font-weight: 900;
-  margin: 12px 14px 6px;
-}
-
-.order-step p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-  margin: 0 14px 16px;
-}
-
-/* PRODUCTION GRID */
-.production-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.production-grid img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+  font-weight: 700;
+  padding: 20px;
   border-radius: 12px;
-  display: block;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.05);
 }
 
-/* FOOTER */
+/* =========================
+   PROCESS + PRODUCTION IMAGES
+========================= */
+.grid-4 img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
   background: #111;
   color: #fff;
-  padding: 30px 20px;
+  padding: 30px;
   text-align: center;
-  font-size: 14px;
-  line-height: 1.7;
+  margin-top: 40px;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 1000px) {
+  nav {
+    display: none;
+  }
+
   .categories {
     grid-template-columns: 1fr;
     height: auto;
@@ -472,50 +430,35 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-4 {
+  .grid-4,
+  .product-grid,
+  .product-grid-3 {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .included-grid,
-  .order-grid,
-  .production-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  nav {
-    display: none;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 520px) {
   .sports-grid,
   .grid-3,
   .grid-4,
   .product-grid,
-  .included-grid,
-  .order-grid,
-  .production-grid {
+  .product-grid-3 {
     grid-template-columns: 1fr;
   }
 
-  .sports-section h2 {
-    font-size: 34px;
+  .main-header {
+    padding: 15px 20px;
+  }
+
+  .top-bar {
+    padding: 10px 20px;
   }
 
   .intro h1 {
     font-size: 34px;
   }
 
-  .custom-bar {
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .category-overlay h1 {
+  .sports-section h2 {
     font-size: 32px;
   }
 }
