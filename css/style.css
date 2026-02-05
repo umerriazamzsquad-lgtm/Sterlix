@@ -69,7 +69,7 @@ nav a:hover {
 .categories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 340px;
+  height: 300px;
 }
 
 .category {
@@ -489,5 +489,6 @@ footer {
     font-size: 34px;
   }
 }
+
 
 
