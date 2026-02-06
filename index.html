@@ -174,9 +174,27 @@
   </svg>
 
 </a>
+<script>
+  // Mobile tap tooltip for WhatsApp button
+  const waBtn = document.querySelector(".whatsapp-float");
+
+  waBtn.addEventListener("click", function (e) {
+    // On mobile: first tap shows tooltip, second tap opens WhatsApp
+    if (window.innerWidth <= 600 && !waBtn.classList.contains("active")) {
+      e.preventDefault();
+      waBtn.classList.add("active");
+
+      // Auto hide after 2 seconds
+      setTimeout(() => {
+        waBtn.classList.remove("active");
+      }, 2000);
+    }
+  });
+</script>
 
 </body>
 </html>
+
 
 
 
