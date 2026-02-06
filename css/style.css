@@ -553,30 +553,112 @@ footer p {
     font-size: 34px;
   }
 }
-/* ============================
-   WHATSAPP FLOATING BUTTON
-============================ */
+/* ===========================
+   WHATSAPP FLOAT BUTTON
+=========================== */
+
 .whatsapp-float {
   position: fixed;
-  bottom: 22px;
   right: 22px;
-  width: 60px;
-  height: 60px;
-  background: #25D366;
-  color: #fff;
+  bottom: 22px;
+  width: 62px;
+  height: 62px;
+  background: #25d366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   z-index: 9999;
-  transition: 0.2s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
-.whatsapp-float:hover {
-  transform: translateY(-3px);
-  opacity: 0.95;
+/* icon size */
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  display: block;
 }
+
+/* Hover effect */
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
+
+/* Tooltip */
+.wa-tooltip {
+  position: absolute;
+  right: 75px;
+  background: #111;
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(5px);
+  transition: 0.25s ease;
+}
+
+/* Tooltip arrow */
+.wa-tooltip::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #111;
+}
+
+/* Desktop hover shows tooltip */
+.whatsapp-float:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bounce animation */
+@keyframes wa-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Soft bounce */
+.whatsapp-float {
+  animation: wa-bounce 2.2s infinite;
+}
+
+/* Mobile styling */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Tooltip (hidden until tap) */
+  .wa-tooltip {
+    display: block;
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  /* When active (tapped) */
+  .whatsapp-float.active .wa-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
