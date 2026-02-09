@@ -73,10 +73,14 @@ nav a:hover {
   height: 380px;
 }
 
+/* IMPORTANT FIX: make hero blocks clickable if you wrap them in <a> */
 .category {
   position: relative;
   background-size: cover;
   background-position: center;
+
+  display: block;
+  text-decoration: none;
 }
 
 .category .overlay {
@@ -93,7 +97,7 @@ nav a:hover {
   color: #fff;
   font-size: 34px;
   font-weight: 800;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* ============================
@@ -161,7 +165,7 @@ nav a:hover {
 .category-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0, 0, 0, 0.65);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -210,14 +214,14 @@ nav a:hover {
   overflow: hidden;
   padding: 18px;
   border: 1px solid #eee;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
 .category-card img {
   width: 100%;
-  height: 240px;              /* FIXED HEIGHT */
-  object-fit: contain;        /* NO CROPPING */
+  height: 240px;       /* fixed */
+  object-fit: contain; /* NO CROPPING */
   background: #f7f7f7;
   border-radius: 12px;
   padding: 12px;
@@ -291,7 +295,7 @@ nav a:hover {
   background-position: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .sport-overlay {
@@ -308,7 +312,7 @@ nav a:hover {
 .sport-overlay h3 {
   font-size: 34px;
   font-weight: 900;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* VIEW ALL BUTTON */
@@ -358,7 +362,8 @@ nav a:hover {
 }
 
 /* ============================
-   PRODUCT GRID (MEN SECTION)
+   PRODUCT GRID (MEN + WOMEN)
+   FIXED: prevents giant images
 ============================ */
 .product-grid {
   display: grid;
@@ -368,7 +373,7 @@ nav a:hover {
   margin: auto;
 }
 
-/* IMPORTANT: If you use product-grid-3 anywhere */
+/* 3 column version */
 .product-grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -378,16 +383,19 @@ nav a:hover {
   border-radius: 18px;
   padding: 18px;
   border: 1px solid #eee;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  height: 320px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* KEY FIX */
+  height: auto;
+  min-height: 280px;
 }
 
 .product-card img {
   width: 100%;
-  height: 100%;
+  max-height: 260px;
   object-fit: contain;
 }
 
@@ -407,7 +415,7 @@ nav a:hover {
   border-radius: 18px;
   padding: 25px;
   border: 1px solid #eee;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .included-item h3 {
@@ -438,7 +446,7 @@ nav a:hover {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #eee;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   text-align: left;
 }
 
@@ -479,7 +487,7 @@ nav a:hover {
 }
 
 /* ============================
-   FOOTER
+   FOOTER (SIMPLE)
 ============================ */
 footer {
   background: #111;
@@ -493,70 +501,9 @@ footer p {
   margin: 6px 0;
 }
 
-/* ============================
-   RESPONSIVE
-============================ */
-@media (max-width: 1000px) {
-  nav {
-    display: none;
-  }
-
-  .categories {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
-
-  .category {
-    height: 220px;
-  }
-
-  .grid-3,
-  .sports-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .included-grid,
-  .order-grid,
-  .production-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 550px) {
-  .top-bar,
-  .main-header {
-    padding: 12px 15px;
-  }
-
-  .grid-3,
-  .sports-grid,
-  .product-grid,
-  .included-grid,
-  .order-grid,
-  .production-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .category-overlay h1 {
-    font-size: 32px;
-  }
-
-  .section h2 {
-    font-size: 32px;
-  }
-
-  .intro h1 {
-    font-size: 34px;
-  }
-}
 /* ===========================
    WHATSAPP FLOAT BUTTON
 =========================== */
-
 .whatsapp-float {
   position: fixed;
   right: 22px;
@@ -569,9 +516,12 @@ footer p {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   text-decoration: none;
   transition: transform 0.2s ease;
+
+  /* Bounce */
+  animation: wa-bounce 2.2s infinite;
 }
 
 /* icon size */
@@ -623,46 +573,18 @@ footer p {
 
 /* Bounce animation */
 @keyframes wa-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Soft bounce */
-.whatsapp-float {
-  animation: wa-bounce 2.2s infinite;
-}
-
-/* Mobile styling */
-@media (max-width: 600px) {
-  .whatsapp-float {
-    width: 56px;
-    height: 56px;
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .whatsapp-float svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  /* Tooltip (hidden until tap) */
-  .wa-tooltip {
-    display: block;
-    opacity: 0;
-    transform: translateY(5px);
-  }
-
-  /* When active (tapped) */
-  .whatsapp-float.active .wa-tooltip {
-    opacity: 1;
+  0%,
+  100% {
     transform: translateY(0);
   }
+  50% {
+    transform: translateY(-6px);
+  }
 }
+
 /* ===========================
    FOOTER (LIKE SAMPLE)
 =========================== */
-
 .site-footer {
   background: #111;
   color: #fff;
@@ -732,27 +654,103 @@ footer p {
   font-size: 16px;
 }
 
-.social.fb { background: #1877f2; }
-.social.ig { background: #e1306c; }
-.social.pt { background: #bd081c; }
+.social.fb {
+  background: #1877f2;
+}
+.social.ig {
+  background: #e1306c;
+}
+.social.pt {
+  background: #bd081c;
+}
 
 .footer-bottom {
   margin-top: 40px;
   padding-top: 18px;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 13px;
   color: #bbb;
   text-align: center;
 }
 
-/* Responsive Footer */
-@media (max-width: 1100px) {
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 1000px) {
+  nav {
+    display: none;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .category {
+    height: 220px;
+  }
+
+  .grid-3,
+  .sports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .included-grid,
+  .order-grid,
+  .production-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 600px) {
+  .top-bar,
+  .main-header {
+    padding: 12px 15px;
+  }
+
+  .grid-3,
+  .sports-grid,
+  .product-grid,
+  .included-grid,
+  .order-grid,
+  .production-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-overlay h1 {
+    font-size: 32px;
+  }
+
+  .section h2 {
+    font-size: 32px;
+  }
+
+  .intro h1 {
+    font-size: 34px;
+  }
+
+  /* WhatsApp button mobile */
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Footer mobile */
   .site-footer {
     padding: 50px 20px 20px;
   }
@@ -761,7 +759,3 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
-
-
-
-
