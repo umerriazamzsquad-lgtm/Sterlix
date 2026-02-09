@@ -73,14 +73,10 @@ nav a:hover {
   height: 380px;
 }
 
-/* IMPORTANT FIX: make hero blocks clickable if you wrap them in <a> */
 .category {
   position: relative;
   background-size: cover;
   background-position: center;
-
-  display: block;
-  text-decoration: none;
 }
 
 .category .overlay {
@@ -97,7 +93,7 @@ nav a:hover {
   color: #fff;
   font-size: 34px;
   font-weight: 800;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
 /* ============================
@@ -139,6 +135,7 @@ nav a:hover {
   margin-bottom: 10px;
   font-weight: 900;
   letter-spacing: -0.5px;
+  color: #111;
 }
 
 .section-desc {
@@ -165,7 +162,7 @@ nav a:hover {
 .category-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0,0,0,0.65);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,14 +211,14 @@ nav a:hover {
   overflow: hidden;
   padding: 18px;
   border: 1px solid #eee;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   text-align: center;
 }
 
 .category-card img {
   width: 100%;
-  height: 240px;       /* fixed */
-  object-fit: contain; /* NO CROPPING */
+  height: 240px;
+  object-fit: contain;
   background: #f7f7f7;
   border-radius: 12px;
   padding: 12px;
@@ -295,7 +292,7 @@ nav a:hover {
   background-position: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
 }
 
 .sport-overlay {
@@ -312,7 +309,7 @@ nav a:hover {
 .sport-overlay h3 {
   font-size: 34px;
   font-weight: 900;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
 /* VIEW ALL BUTTON */
@@ -362,8 +359,7 @@ nav a:hover {
 }
 
 /* ============================
-   PRODUCT GRID (MEN + WOMEN)
-   FIXED: prevents giant images
+   PRODUCT GRID (MEN + WOMEN SECTIONS)
 ============================ */
 .product-grid {
   display: grid;
@@ -373,7 +369,6 @@ nav a:hover {
   margin: auto;
 }
 
-/* 3 column version */
 .product-grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -383,19 +378,16 @@ nav a:hover {
   border-radius: 18px;
   padding: 18px;
   border: 1px solid #eee;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* KEY FIX */
-  height: auto;
-  min-height: 280px;
 }
 
 .product-card img {
   width: 100%;
-  max-height: 260px;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -415,7 +407,7 @@ nav a:hover {
   border-radius: 18px;
   padding: 25px;
   border: 1px solid #eee;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .included-item h3 {
@@ -446,7 +438,7 @@ nav a:hover {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #eee;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   text-align: left;
 }
 
@@ -486,24 +478,54 @@ nav a:hover {
   border-radius: 16px;
 }
 
-/* ============================
-   FOOTER (SIMPLE)
-============================ */
-footer {
-  background: #111;
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 14px;
+/* ======================================================
+   MEN APPAREL TEXT SECTION FIX (THIS FIXES YOUR PIC 2)
+   - Makes headings smaller
+   - Makes them RED like your requested sample
+   - Aligns text left
+====================================================== */
+
+.men-text-section {
+  max-width: 1100px;
+  margin: auto;
+  text-align: left;
+  padding-top: 40px;
 }
 
-footer p {
-  margin: 6px 0;
+.men-text-section h2 {
+  font-size: 26px !important;
+  color: #b10000 !important;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-align: left !important;
+}
+
+.men-text-section p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.9;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+/* Second title style like sample */
+.men-text-section h3 {
+  font-size: 24px;
+  color: #111;
+  font-weight: 900;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.men-text-section h3 span {
+  color: #b10000;
 }
 
 /* ===========================
    WHATSAPP FLOAT BUTTON
 =========================== */
+
 .whatsapp-float {
   position: fixed;
   right: 22px;
@@ -516,12 +538,9 @@ footer p {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   text-decoration: none;
   transition: transform 0.2s ease;
-
-  /* Bounce */
-  animation: wa-bounce 2.2s infinite;
 }
 
 /* icon size */
@@ -573,18 +592,47 @@ footer p {
 
 /* Bounce animation */
 @keyframes wa-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Soft bounce */
+.whatsapp-float {
+  animation: wa-bounce 2.2s infinite;
+}
+
+/* Mobile styling */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    right: 16px;
+    bottom: 16px;
   }
-  50% {
-    transform: translateY(-6px);
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Tooltip (hidden until tap) */
+  .wa-tooltip {
+    display: block;
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  /* When active (tapped) */
+  .whatsapp-float.active .wa-tooltip {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 /* ===========================
    FOOTER (LIKE SAMPLE)
 =========================== */
+
 .site-footer {
   background: #111;
   color: #fff;
@@ -654,20 +702,14 @@ footer p {
   font-size: 16px;
 }
 
-.social.fb {
-  background: #1877f2;
-}
-.social.ig {
-  background: #e1306c;
-}
-.social.pt {
-  background: #bd081c;
-}
+.social.fb { background: #1877f2; }
+.social.ig { background: #e1306c; }
+.social.pt { background: #bd081c; }
 
 .footer-bottom {
   margin-top: 40px;
   padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255,255,255,0.12);
   font-size: 13px;
   color: #bbb;
   text-align: center;
@@ -676,6 +718,12 @@ footer p {
 /* ============================
    RESPONSIVE
 ============================ */
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 1000px) {
   nav {
     display: none;
@@ -704,13 +752,19 @@ footer p {
   .production-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media (max-width: 600px) {
+  .site-footer {
+    padding: 50px 20px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
   .top-bar,
   .main-header {
     padding: 12px 15px;
@@ -735,27 +789,5 @@ footer p {
 
   .intro h1 {
     font-size: 34px;
-  }
-
-  /* WhatsApp button mobile */
-  .whatsapp-float {
-    width: 56px;
-    height: 56px;
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .whatsapp-float svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  /* Footer mobile */
-  .site-footer {
-    padding: 50px 20px 20px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
   }
 }
