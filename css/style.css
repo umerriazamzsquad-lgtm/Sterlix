@@ -77,6 +77,8 @@ nav a:hover {
   position: relative;
   background-size: cover;
   background-position: center;
+  display: block;
+  text-decoration: none;
 }
 
 .category .overlay {
@@ -285,20 +287,32 @@ nav a:hover {
   text-decoration: none;
 }
 
+/* UPDATED: card size + hover */
 .sport-card {
-  height: 260px;
+  height: 230px;
   border-radius: 18px;
   background-size: cover;
   background-position: center;
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.sport-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+}
+
+/* UPDATED: professional overlay */
 .sport-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(180, 0, 0, 0.55);
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.20) 0%,
+    rgba(0,0,0,0.55) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -307,9 +321,10 @@ nav a:hover {
 }
 
 .sport-overlay h3 {
-  font-size: 34px;
+  font-size: 24px;
   font-weight: 900;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  line-height: 1.2;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
 }
 
 /* VIEW ALL BUTTON */
@@ -479,12 +494,8 @@ nav a:hover {
 }
 
 /* ======================================================
-   MEN APPAREL TEXT SECTION FIX (THIS FIXES YOUR PIC 2)
-   - Makes headings smaller
-   - Makes them RED like your requested sample
-   - Aligns text left
+   MEN APPAREL TEXT SECTION FIX
 ====================================================== */
-
 .men-text-section {
   max-width: 1100px;
   margin: auto;
@@ -508,7 +519,6 @@ nav a:hover {
   text-align: left;
 }
 
-/* Second title style like sample */
 .men-text-section h3 {
   font-size: 24px;
   color: #111;
@@ -525,7 +535,6 @@ nav a:hover {
 /* ===========================
    WHATSAPP FLOAT BUTTON
 =========================== */
-
 .whatsapp-float {
   position: fixed;
   right: 22px;
@@ -543,19 +552,16 @@ nav a:hover {
   transition: transform 0.2s ease;
 }
 
-/* icon size */
 .whatsapp-float svg {
   width: 30px;
   height: 30px;
   display: block;
 }
 
-/* Hover effect */
 .whatsapp-float:hover {
   transform: scale(1.08);
 }
 
-/* Tooltip */
 .wa-tooltip {
   position: absolute;
   right: 75px;
@@ -572,7 +578,6 @@ nav a:hover {
   transition: 0.25s ease;
 }
 
-/* Tooltip arrow */
 .wa-tooltip::after {
   content: "";
   position: absolute;
@@ -584,55 +589,23 @@ nav a:hover {
   border-color: transparent transparent transparent #111;
 }
 
-/* Desktop hover shows tooltip */
 .whatsapp-float:hover .wa-tooltip {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Bounce animation */
 @keyframes wa-bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
 
-/* Soft bounce */
 .whatsapp-float {
   animation: wa-bounce 2.2s infinite;
-}
-
-/* Mobile styling */
-@media (max-width: 600px) {
-  .whatsapp-float {
-    width: 56px;
-    height: 56px;
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .whatsapp-float svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  /* Tooltip (hidden until tap) */
-  .wa-tooltip {
-    display: block;
-    opacity: 0;
-    transform: translateY(5px);
-  }
-
-  /* When active (tapped) */
-  .whatsapp-float.active .wa-tooltip {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* ===========================
    FOOTER (LIKE SAMPLE)
 =========================== */
-
 .site-footer {
   background: #111;
   color: #fff;
@@ -762,6 +735,29 @@ nav a:hover {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .wa-tooltip {
+    display: block;
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  .whatsapp-float.active .wa-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 550px) {
@@ -789,5 +785,9 @@ nav a:hover {
 
   .intro h1 {
     font-size: 34px;
+  }
+
+  .sport-overlay h3 {
+    font-size: 20px;
   }
 }
