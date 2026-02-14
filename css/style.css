@@ -77,7 +77,6 @@ nav a:hover {
   position: relative;
   background-size: cover;
   background-position: center;
-  display: block;
   text-decoration: none;
 }
 
@@ -93,8 +92,8 @@ nav a:hover {
 
 .category .overlay h2 {
   color: #fff;
-  font-size: 34px;
-  font-weight: 800;
+  font-size: 32px;
+  font-weight: 900;
   text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
@@ -115,7 +114,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
+  font-weight: 700;
   color: #111;
   font-size: 15px;
 }
@@ -133,7 +132,7 @@ nav a:hover {
 }
 
 .section h2 {
-  font-size: 42px;
+  font-size: 40px;
   margin-bottom: 10px;
   font-weight: 900;
   letter-spacing: -0.5px;
@@ -215,6 +214,10 @@ nav a:hover {
   border: 1px solid #eee;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .category-card img {
@@ -226,22 +229,32 @@ nav a:hover {
   padding: 12px;
 }
 
+/* FIX: force same title height (fix button slip) */
 .category-card h3 {
   font-size: 22px;
   margin-top: 15px;
   font-weight: 900;
+
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
+/* FIX: force same description height */
 .category-card p {
   margin-top: 10px;
   font-size: 14px;
   color: #333;
-  min-height: 45px;
+
+  min-height: 55px;
 }
 
+/* FIX: button always stays aligned at bottom */
 .category-card a {
+  margin-top: auto;
   display: inline-block;
-  margin-top: 15px;
   background: #b10000;
   color: #fff;
   padding: 12px 26px;
@@ -249,6 +262,7 @@ nav a:hover {
   text-decoration: none;
   font-weight: 800;
   font-size: 14px;
+  align-self: center;
 }
 
 .category-card a:hover {
@@ -264,7 +278,7 @@ nav a:hover {
 }
 
 .sports-section h2 {
-  font-size: 44px;
+  font-size: 42px;
   font-weight: 900;
 }
 
@@ -287,31 +301,24 @@ nav a:hover {
   text-decoration: none;
 }
 
-/* UPDATED: card size + hover */
 .sport-card {
-  height: 230px;
+  height: 250px;
   border-radius: 18px;
   background-size: cover;
   background-position: center;
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.10);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.sport-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 35px rgba(0,0,0,0.18);
-}
-
-/* UPDATED: professional overlay */
+/* FIX: professional overlay (no dark red) */
 .sport-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0,0,0,0.20) 0%,
-    rgba(0,0,0,0.55) 100%
+    rgba(0,0,0,0.25) 0%,
+    rgba(0,0,0,0.65) 100%
   );
   display: flex;
   align-items: center;
@@ -320,11 +327,12 @@ nav a:hover {
   color: #fff;
 }
 
+/* FIX: smaller text */
 .sport-overlay h3 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 900;
   line-height: 1.2;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
 }
 
 /* VIEW ALL BUTTON */
@@ -337,9 +345,10 @@ nav a:hover {
   background: #b10000;
   color: #fff;
   padding: 14px 34px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 900;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .view-all a:hover {
@@ -361,7 +370,7 @@ nav a:hover {
 }
 
 .intro h1 {
-  font-size: 48px;
+  font-size: 44px;
   font-weight: 900;
   margin-bottom: 15px;
 }
@@ -504,7 +513,7 @@ nav a:hover {
 }
 
 .men-text-section h2 {
-  font-size: 26px !important;
+  font-size: 28px !important;
   color: #b10000 !important;
   font-weight: 900;
   margin-bottom: 10px;
@@ -520,7 +529,7 @@ nav a:hover {
 }
 
 .men-text-section h3 {
-  font-size: 24px;
+  font-size: 28px;
   color: #111;
   font-weight: 900;
   margin-top: 25px;
@@ -550,6 +559,7 @@ nav a:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   text-decoration: none;
   transition: transform 0.2s ease;
+  animation: wa-bounce 2.2s infinite;
 }
 
 .whatsapp-float svg {
@@ -562,6 +572,7 @@ nav a:hover {
   transform: scale(1.08);
 }
 
+/* Tooltip */
 .wa-tooltip {
   position: absolute;
   right: 75px;
@@ -599,8 +610,30 @@ nav a:hover {
   50% { transform: translateY(-6px); }
 }
 
-.whatsapp-float {
-  animation: wa-bounce 2.2s infinite;
+/* Mobile */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .wa-tooltip {
+    display: block;
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  .whatsapp-float.active .wa-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===========================
@@ -735,29 +768,6 @@ nav a:hover {
   .footer-grid {
     grid-template-columns: 1fr;
   }
-
-  .whatsapp-float {
-    width: 56px;
-    height: 56px;
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .whatsapp-float svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .wa-tooltip {
-    display: block;
-    opacity: 0;
-    transform: translateY(5px);
-  }
-
-  .whatsapp-float.active .wa-tooltip {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 550px) {
@@ -788,6 +798,6 @@ nav a:hover {
   }
 
   .sport-overlay h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
