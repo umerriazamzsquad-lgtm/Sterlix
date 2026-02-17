@@ -555,10 +555,13 @@ nav a:hover {
 
 .two-col-img img {
   width: 100%;
-  height: 420px;
-  object-fit: cover;
+  height: 460px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 18px;
   border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
 }
 
 /* Text block */
@@ -867,3 +870,4 @@ nav a:hover {
     font-size: 22px;
   }
 }
+
