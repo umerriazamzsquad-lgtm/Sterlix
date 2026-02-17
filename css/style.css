@@ -247,7 +247,6 @@ nav a:hover {
   margin-top: 10px;
   font-size: 14px;
   color: #333;
-
   min-height: 55px;
 }
 
@@ -539,6 +538,73 @@ nav a:hover {
 
 .men-text-section h3 span {
   color: #b10000;
+}
+
+/* ======================================================
+   NEW: BASEBALL 2 IMAGE+TEXT SECTIONS
+   (two-col-section, reverse)
+====================================================== */
+.two-col-section {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.two-col-img img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+/* Text block */
+.two-col-text {
+  text-align: left;
+}
+
+.two-col-title {
+  font-size: 34px !important;
+  font-weight: 900;
+  color: #111 !important;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.two-col-text p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+/* Reverse section (text left, image right) */
+.two-col-section.reverse {
+  direction: rtl;
+}
+
+.two-col-section.reverse > div {
+  direction: ltr;
+}
+
+/* Mobile for 2-column sections */
+@media (max-width: 900px) {
+  .two-col-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .two-col-img img {
+    height: 320px;
+  }
+
+  .two-col-title {
+    font-size: 28px !important;
+    text-align: left;
+  }
 }
 
 /* ===========================
