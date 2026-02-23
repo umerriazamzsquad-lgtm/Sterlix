@@ -872,70 +872,117 @@ nav a:hover {
 }
 
 /* ============================
-   FOOTBALL PRODUCT GRID (WITH BUTTON)
+   FOOTBALL PRODUCT GRID (PREMIUM)
 ============================ */
+
 .football-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 35px;
   max-width: 1200px;
-  margin: 40px auto 0 auto;
+  margin: 50px auto 0 auto;
 }
 
 .football-card {
   background: #fff;
-  padding: 20px;
+  padding: 22px;
   border-radius: 14px;
   border: 1px solid #eee;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  transition: all 0.35s ease;
 }
 
+/* Premium hover lift */
+.football-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  border-color: transparent;
+}
+
+/* IMAGE CONTAINER */
 .football-card img {
   width: 100%;
   height: 240px;
   object-fit: contain;
-  background: #f5f5f5;
+  background: #f6f6f6;
   padding: 15px;
   border-radius: 10px;
+
+  transition: transform 0.4s ease;
 }
 
+/* Smooth zoom */
+.football-card:hover img {
+  transform: scale(1.06);
+}
+
+/* TITLE */
 .football-card h3 {
   font-size: 18px;
   font-weight: 800;
-  margin-top: 15px;
-
-  min-height: 50px; /* equal title height */
+  margin-top: 18px;
+  min-height: 48px;
 }
 
+/* DESCRIPTION */
 .football-card p {
   font-size: 14px;
   color: #555;
   margin-top: 10px;
-
-  min-height: 60px; /* equal description height */
+  min-height: 60px;
 }
 
+/* BUTTON */
 .football-btn {
   margin-top: auto;
   display: inline-block;
   background: #b10000;
   color: #fff;
-  padding: 12px 24px;
+  padding: 12px 26px;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 800;
   text-decoration: none;
-  transition: 0.2s;
+  transition: all 0.25s ease;
 }
 
 .football-btn:hover {
   background: #d30000;
   transform: translateY(-2px);
+}
+
+/* ============================
+   QUICK VIEW OVERLAY
+============================ */
+
+.quick-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show overlay on hover */
+.football-card:hover .quick-view {
+  opacity: 1;
 }
 
 /* Responsive */
@@ -950,5 +997,3 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
-
-
