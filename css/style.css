@@ -222,11 +222,9 @@ nav a:hover {
 
 .category-card img {
   width: 100%;
-  height: 240px;
-  object-fit: contain;
-  background: #f7f7f7;
+  aspect-ratio: 4 / 5;   /* perfect for apparel */
+  object-fit: cover;     /* fills nicely */
   border-radius: 12px;
-  padding: 12px;
 }
 
 /* FIX: force same title height (fix button slip) */
@@ -1134,4 +1132,5 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+
 
