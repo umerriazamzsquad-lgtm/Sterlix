@@ -305,38 +305,57 @@ nav a:hover {
   text-decoration: none;
 }
 
+/* ============================
+   SPORTS GRID CARDS
+============================ */
+
 .sport-card {
-  height: 250px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* perfect banner ratio */
   border-radius: 18px;
+
   background-size: cover;
   background-position: center;
-  position: relative;
+  background-repeat: no-repeat;
+
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* subtle premium hover */
+.sport-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
 }
 
 /* FIX: professional overlay (no dark red) */
 .sport-overlay {
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     180deg,
-    rgba(0,0,0,0.25) 0%,
+    rgba(0,0,0,0.15) 0%,
     rgba(0,0,0,0.65) 100%
   );
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
   color: #fff;
 }
 
 /* FIX: smaller text */
 .sport-overlay h3 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 900;
-  line-height: 1.2;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.55);
 }
 
 /* VIEW ALL BUTTON */
@@ -1139,6 +1158,7 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
