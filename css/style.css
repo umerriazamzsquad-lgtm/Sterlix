@@ -352,10 +352,11 @@ nav a:hover {
 
 /* FIX: smaller text */
 .sport-overlay h3 {
+  color: #fff;
   font-size: 28px;
   font-weight: 900;
   letter-spacing: 0.5px;
-  text-shadow: 0 3px 12px rgba(0,0,0,0.55);
+  text-shadow: 0 6px 18px rgba(0,0,0,0.8);
 }
 
 /* VIEW ALL BUTTON */
@@ -1158,6 +1159,7 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
